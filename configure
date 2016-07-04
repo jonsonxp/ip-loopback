@@ -7,7 +7,7 @@ usage() {
   echo "Options:" 1>&2
   echo "    -data_width NUMBER	  : the data width of the interface" 1>&2
   echo "    -shell NAME           : the shell name." 1>&2
-  echo "    -clk_period NUMBER    : the ms period of clock." 1>&2
+  echo "    -clk_frequency NUMBER    : the frequency of clock (MHz)." 1>&2
   exit 1
 }
 
@@ -38,7 +38,7 @@ case $i in
                 SHELL=$2
                 shift 2
                 ;;
-        -clk_period)
+        -clk_frequency)
         	if [ -z "$2" ]; then
         		echo "option requires an argument -- $1" 1>&2
         		exit 1
@@ -54,12 +54,34 @@ case $i in
 esac
 done
 
+case $CLK in
+        250)
+        CLKPERIOD=4
+        ;;
+        200)
+        CLKPERIOD=5
+        ;;
+        150)
+        CLKPERIOD=6.667
+        ;;
+        100)
+        CLKPERIOD=10
+        ;;
+        *)
+        echo "Unsupported clock frequency. Only clocks listed below are supported(MHz):"
+        echo "100, 150, 200, 250.
+"
+        exit
+        ;;
+esac
+
+
 if [ -z $SHELL ]; then
     echo "$PROGNAME: too few arguments" 1>&2
     echo "Try '$PROGNAME --help' for more information." 1>&2
     exit 1
 fi
-if [ -z $CLK ]; then
+if [ -z $CLKPERIOD ]; then
     echo "$PROGNAME: too few arguments" 1>&2
     echo "Try '$PROGNAME --help' for more information." 1>&2
     exit 1
@@ -84,5 +106,5 @@ sed -i "/define MYINT/c\#define MYINT ap_int<$DATAWIDTH>" src/main.hpp
 echo "success: Updated the data width in main.hpp" 1>&2
 
 #synth.tcl clk
-sed -i "/create_clock -period/c\create_clock -period $CLK -name default" synth.tcl
+sed -i "/create_clock -period/c\create_clock -period $CLKPERIOD -name default" synth.tcl
 echo "success: Updated the clock period in synth.tcl" 1>&2
