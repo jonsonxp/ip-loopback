@@ -1,16 +1,16 @@
 {
-  "name": "ip-loopback-32bit",
+  "name": "ip-loopback",
   "type": "ip",
   "version": "0.0.1",
-  "summary": "A simple loopback circuit for 32bit integer numbers.",
-  "description": "This ip-loopback-32bit IP is a simple circuit which reads input data, adds a value from memory port, and writes back to output port. It use Vivado_HLS for the high-level synthesis.",
-  "homepage": "https://github.com/jonsonxp/ip-loopback-32bit/",
+  "summary": "A simple loopback circuit integer numbers.",
+  "description": "This ip-loopback IP is a simple circuit which reads input data, adds a value from memory port, and writes back to output port. It use Vivado_HLS for the high-level synthesis.",
+  "homepage": "https://github.com/jonsonxp/ip-loopback/",
   "license": "MIT",
   "authors": {
     "jonsonxp": "ofmsmile@msn.com"
   },
   "source": {
-    "git": "https://github.com/jonsonxp/ip-loopback-32bit.git",
+    "git": "https://github.com/jonsonxp/ip-loopback.git",
     "tag": "0.0.1"
   },
   "code": {
