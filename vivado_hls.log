@@ -1,0 +1,54 @@
+================================================================
+  Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC
+  Version 2015.4
+  Build 1412921 on Wed Nov 18 09:58:55 AM 2015
+  Copyright (C) 2015 Xilinx Inc. All rights reserved.
+================================================================
+@I [HLS-10] Running '/opt/Xilinx/Vivado_HLS/2015.4/bin/unwrapped/lnx64.o/vivado_hls'
+            for user 'cho' on host 'Bluemountain' (Linux_x86_64 version 3.13.0-91-generic) on Mon Jul 04 16:28:38 JST 2016
+            in directory '/home/cho/hCODE/IPs/ip-loopback'
+@I [HLS-10] Creating and opening project '/home/cho/hCODE/IPs/ip-loopback/ip-loopback'.
+@I [HLS-10] Adding design file './src/main.cpp' to the project
+@I [HLS-10] Adding design file './src/main.hpp' to the project
+@I [HLS-10] Adding test bench file './src/test.cpp' to the project
+@I [HLS-10] Creating and opening solution '/home/cho/hCODE/IPs/ip-loopback/ip-loopback/solution1'.
+@I [HLS-10] Setting target device to 'xc7vx485tffg1761-2'
+@I [SYN-201] Setting up clock 'default' with a period of 4ns.
+@I [SYN-201] Setting up clock 'default' with an uncertainty of 0.2ns.
+@I [HLS-10] Analyzing design file './src/main.cpp' ... 
+@I [HLS-10] Validating synthesis directives ...
+@I [HLS-10] Starting code transformations ...
+@I [HLS-10] Checking synthesizability ...
+@I [HLS-111] Elapsed time: 3.07316 seconds; current memory usage: 64.4 MB.
+@I [HLS-10] Starting hardware synthesis ...
+@I [HLS-10] Synthesizing 'ip_loopback' ...
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'ip_loopback' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-61] Pipelining function 'ip_loopback'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 1.
+@I [SCHED-11] Finished scheduling.
+@I [HLS-111] Elapsed time: 0.065228 seconds; current memory usage: 64.7 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'ip_loopback' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture generation ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding ...
+@I [BIND-100] Finished micro-architecture generation.
+@I [HLS-111] Elapsed time: 0.002531 seconds; current memory usage: 64.7 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'ip_loopback' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [RTGEN-500] Setting interface mode on port 'ip_loopback/in_V_V' to 'ap_fifo'.
+@I [RTGEN-500] Setting interface mode on port 'ip_loopback/out_V_V' to 'ap_fifo'.
+@I [RTGEN-500] Setting interface mode on function 'ip_loopback' to 'ap_ctrl_none'.
+@I [RTGEN-100] Finished creating RTL model for 'ip_loopback'.
+@I [HLS-111] Elapsed time: 0.004422 seconds; current memory usage: 64.8 MB.
+@I [HLS-10] Finished generating all RTL models.
+@I [WSYSC-301] Generating RTL SystemC for 'ip_loopback'.
+@I [WVHDL-304] Generating RTL VHDL for 'ip_loopback'.
+@I [WVLOG-307] Generating RTL Verilog for 'ip_loopback'.
+@I [HLS-112] Total elapsed time: 12.554 seconds; peak memory usage: 64.8 MB.

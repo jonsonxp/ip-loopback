@@ -3,8 +3,8 @@
 ## Please DO NOT edit it.
 ## Copyright (C) 2015 Xilinx Inc. All rights reserved.
 ############################################################
-open_project ip-loopback-32bit
-set_top ip_loopback_32bit
+open_project ip-loopback
+set_top ip_loopback
 add_files ./src/main.cpp
 add_files ./src/main.hpp
 add_files -tb ./src/test.cpp
@@ -12,7 +12,7 @@ open_solution "solution1"
 set_part {xc7vx485tffg1761-2}
 create_clock -period 4 -name default
 set_clock_uncertainty 5%
-#source "./ip-mergesorter-32bit/solution1/directives.tcl"
+config_rtl -encoding onehot -reset all -reset_level high
 csynth_design
 #export_design -format syn_dcp
 quit

@@ -8,7 +8,8 @@
 
 using namespace hls;
 
-void ip_loopback_32bit(
-		stream<uint32_t> &inData,
-		stream<uint32_t> &outData,
-		ap_uint<256> mem);
+#define MYINT ap_int<128>
+
+void ip_loopback(
+		stream<MYINT> &inData,
+		stream<MYINT> &outData);
