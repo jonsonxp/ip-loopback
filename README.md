@@ -1,34 +1,29 @@
-#ip-loopback-32bit
-ip-loopback-32bit is a simple circuit which reads input data, adds a value from memory port, and writes back to output port. It use Vivado_HLS for the high-level synthesis.
+#ip-loopback
+ip-loopback is a simple circuit which reads input data and writes back to output port. It use Vivado_HLS for the high-level synthesis.
 
 This project is a demo project of [hCODE](https://github.com/hCODE-FPGA/hCODE), which is an repository platform open-sourced hardware.
 
 ## Installation
 [Standalone]
 
-git clone https://github.com/jonsonxp/ip-loopback-32bit.git
+git clone https://github.com/jonsonxp/ip-loopback.git
 
 [hCODE]
 
-hcode ip get ip-loopback-32bit
+hcode ip get ip-loopback
 
 ## Usage
 [standalone]
 
-1) ./configuration.sh board clock_period sorter_size [fifo_depth]
+1) ./configure -data_width NUMBER -CLK NUMBER -device STRING
 
-  - board        : vc707|zybo
-  - clock_period : peroid in ms
-  - sorter_size  : the input size of a merge tree
-  - fifo_depth   : the fifo_depth of the input channel
+  -data_width NUMBER		: the data width of the interface (like 32, 64, or 128 ).
+  -device NAME			: the FPGA device model name (like vc707 is xc7vx485tffg1761-2).
+  -clk NUMBER	 		: the frequency of clock (MHz) (100, 150, 200 or 250).
 
-2) ./make.sh --no-driver
+2) ./make
 
 Then synthesized verilog codes can be found in output folder.
-
-[hCODE]
-hcode ip get ip-loopback-32bit
- 
 
 The hCODE can automaticlly synthesis the IP according to your hardware environment.
 

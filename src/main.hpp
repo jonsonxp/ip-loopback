@@ -8,7 +8,7 @@
 
 using namespace hls;
 
-#define MYINT ap_int<128>
+#define MYINT ap_int<32>
 
 void ip_loopback(
 		stream<MYINT> &inData,
