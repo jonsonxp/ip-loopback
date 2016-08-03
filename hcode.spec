@@ -16,7 +16,7 @@
   "interface": {
     "host": {
       "ap_fifo": {
-        "data_width": all
+        "data_width": "*"
        }
     }
   },
