@@ -9,8 +9,8 @@ add_files ./src/main.cpp
 add_files ./src/main.hpp
 add_files -tb ./src/test.cpp
 open_solution "solution1"
-set_part {xc7vx485tffg1761-2}
-create_clock -period 4 -name default
+set_part {xc7z020clg484-1}
+create_clock -period 5 -name default
 set_clock_uncertainty 5%
 config_rtl -encoding onehot -reset all -reset_level high
 csynth_design
