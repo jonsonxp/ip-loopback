@@ -7,8 +7,8 @@ void ip_loopback(
 	){
 	#pragma HLS PIPELINE II=0 enable_flush
 	#pragma HLS LATENCY max=0
-	#pragma HLS INTERFACE ap_fifo depth=100 port=in
-	#pragma HLS INTERFACE ap_fifo depth=100 port=out
+        #pragma HLS STREAM variable=in depth=100 dim=1
+        #pragma HLS STREAM variable=out depth=100 dim=1
 	#pragma AP interface ap_ctrl_none port=return
 
 	MYINT value;
